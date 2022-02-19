@@ -249,3 +249,100 @@ print("Finished")
  Finished
 """
 ```
+
+17. While Loops
+    > You can use multiple statements in the while loop.
+    > For example, you can use an if statement to make decisions. This ca be useful, if you are making a game and need to loop through a number of player actions and add or remove points of the player.
+    > The code below uses an if/else statement inside a while loop to seperrate the even and odd numbers in the range of 1 to 10
+
+```py
+x = 1
+while x < 10:
+    if x % 2 == 0:
+        print(str(x) + "is even")
+    else:
+        print(str(x) + "is odd")
+    x += 1
+
+"""
+ 1is odd
+ 2is even
+ 3is odd
+ 4is even
+ 5is odd
+ 6is even
+ 7is odd
+ 8is even
+ 9is odd
+"""
+```
+
+18. break
+
+    > To end a while loop prematurely, the break statement can be used. For example, we can break an infinite loop if some condition is met
+
+    > > While True is a short and easy way to make an infinite loop.
+
+```py
+i = 0
+while True :
+    print(i)
+    i = i + 1
+    if i >= 5:
+        print("Breaking")
+        break
+print("Finished")
+```
+
+19. continue
+    > Another statement that can be used within loop is continue. Unlike break, continue jumps back to the top of the loop, rather than stopping it. Basically, the continue statement stops the current iteration and continues with the next one.
+
+```py
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        print("Skipping 3")
+        continue
+    print(i)
+
+"""
+ 1
+ 2
+ Skipping 3
+ 4
+ 5
+"""
+```
+
+20. for Loop
+    > The for loop is used to iterate over a given sequence, such as lists or strings. The code below outputs each item in the list and adds and exclamation mark at the end
+
+```py
+words = ["hello", "world", "spam", "eggs"]
+for word in words:
+    print(word + "!")
+"""
+ hello!
+ world!
+ spam!
+ eggs!
+"""
+```
+
+21. for Loops(The for loop can be used to iterate over stirngs)
+
+```py
+str = "testing for loops"
+count = 0
+
+for x in str:
+    if(x == 't'):
+        count += 1
+print(count)
+"""
+ 2
+"""
+```
+
+> The code above defines a count variable, iterates over the string and calculates the count of 't' letters in it. During each iteration, the x variable represents the current letter of the string. The count Variable is incremented each time the letter 't' is found, Thus, at the end of the loop it represents the number of 't' letters in the string.
