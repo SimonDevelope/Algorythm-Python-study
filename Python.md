@@ -8,18 +8,18 @@
 
 ```py
 print( 2**5 )
-"""
- 2^5의 결과가 나온다.
-"""
+
+# 2^5의 결과가 나온다.
+
 ```
 
 4. Floor division 나누고 소수점 내림(몫을 구한다.)
 
 ```py
 print(20 // 6)
-"""
- 3이 결과값으로 나온다.
-"""
+
+# 3이 결과값으로 나온다.
+
 ```
 
 5. Remainder 나눗셈
@@ -47,17 +47,17 @@ print(1.25 % 0.5)
 ```py
 print('one\ntwo\nthree');
 
-"""
- one
- two
- three
-"""
+
+# one
+# two
+# three
+
 
 print('one\ttwo\tthree');
 
-"""
- one     two     three
-"""
+
+# one     two     three
+
 ```
 
 3. Multiline
@@ -67,11 +67,11 @@ print("""this
 is a multiline
 text""")
 
-"""
- this
- is a multiline
- text
-"""
+
+# this
+# is a multiline
+# text
+
 ```
 
 4. String Operation
@@ -80,10 +80,10 @@ text""")
 print("spam" * 3);
 print(4 * '2');
 
-"""
- spamspamspam
- 2222
-"""
+
+# spamspamspam
+# 2222
+
 ```
 
 5. Variables
@@ -123,9 +123,9 @@ print(words[2])
 nums = [7, 7, 7, 7, 7]
 nums[2] = 5
 print(nums)
-"""
- [7, 7, 5, 7, 7]
-"""
+
+# [7, 7, 5, 7, 7]
+
 ```
 
 9. List Operations
@@ -135,10 +135,10 @@ print(nums)
 nums = [1, 2, 3]
 print(nums + [4, 5, 6])
 print(nums * 3)
-"""
- [1, 2, 3, 4, 5, 6]
- [1, 2, 3, 1, 2, 3, 1, 2, 3]
-"""
+
+# [1, 2, 3, 4, 5, 6]
+# [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
 ```
 
 10. List Operations
@@ -149,11 +149,11 @@ print("spam" in words)
 print("egg" in words)
 print("tomato" in words)
 
-"""
- True
- True
- False
-"""
+
+# True
+# True
+# False
+
 ```
 
 11. List Operations
@@ -166,12 +166,12 @@ print(4 not in nums)
 print(not 3 in nums)
 print(3 not in nums)
 
-"""
- True
- True
- False
- False
-"""
+
+# True
+# True
+# False
+# False
+
 ```
 
 12. List Functions
@@ -182,9 +182,9 @@ nums = [1, 2, 3]
 nums.append(4)
 print(nums)
 
-"""
- [1, 2, 3, 4]
-"""
+
+# [1, 2, 3, 4]
+
 ```
 
 13. List Functions
@@ -195,9 +195,9 @@ nums = [1, 2, 5, 2, 4]
 
 print(len(nums))
 
-"""
- 5
-"""
+
+# 5
+
 ```
 
 14. List Functions
@@ -209,9 +209,9 @@ index = 1
 words.insert(index, "is")
 print(words)
 
-"""
- ['python', 'is', 'fun']
-"""
+
+# ['python', 'is', 'fun']
+
 ```
 
 15. List Functions
@@ -223,11 +223,11 @@ print(letters.index('r'))
 print(letters.index('p'))
 print(letters.index('z'))
 
-"""
-2
-0
-ValueError : 'z' is not in list
-"""
+    """
+    2
+    0
+    ValueError : 'z' is not in list
+    """
 ```
 
 16. While Loops
@@ -240,14 +240,14 @@ while i <= 5:
     i = i + 1
 
 print("Finished")
-"""
- 1
- 2
- 3
- 4
- 5
- Finished
-"""
+    """
+    1
+    2
+    3
+    4
+    5
+    Finished
+    """
 ```
 
 17. While Loops
@@ -264,17 +264,17 @@ while x < 10:
         print(str(x) + "is odd")
     x += 1
 
-"""
- 1is odd
- 2is even
- 3is odd
- 4is even
- 5is odd
- 6is even
- 7is odd
- 8is even
- 9is odd
-"""
+    """
+    1is odd
+    2is even
+    3is odd
+    4is even
+    5is odd
+    6is even
+    7is odd
+    8is even
+    9is odd
+    """
 ```
 
 18. break
@@ -306,13 +306,13 @@ while i < 5:
         continue
     print(i)
 
-"""
- 1
- 2
- Skipping 3
- 4
- 5
-"""
+    """
+    1
+    2
+    Skipping 3
+    4
+    5
+    """
 ```
 
 20. for Loop
@@ -322,12 +322,12 @@ while i < 5:
 words = ["hello", "world", "spam", "eggs"]
 for word in words:
     print(word + "!")
-"""
- hello!
- world!
- spam!
- eggs!
-"""
+    """
+    hello!
+    world!
+    spam!
+    eggs!
+    """
 ```
 
 21. for Loops(The for loop can be used to iterate over stirngs)
@@ -340,9 +340,218 @@ for x in str:
     if(x == 't'):
         count += 1
 print(count)
-"""
- 2
-"""
+
+ # 2
+
 ```
 
 > The code above defines a count variable, iterates over the string and calculates the count of 't' letters in it. During each iteration, the x variable represents the current letter of the string. The count Variable is incremented each time the letter 't' is found, Thus, at the end of the loop it represents the number of 't' letters in the string.
+
+22. Range
+
+```py
+numbers = list(range(10))
+
+print(numbers)
+
+    """
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    """
+```
+
+22. Range (second argument)
+    > if range is called with one argument, it produces an object with values from 0 to that argument. if it is called with two arguments, it produces values from the first to the second.
+
+```py
+numbers = list(range(3, 8))
+print(numbers)
+
+print(range(20) == range(0, 20))
+    """
+    [3, 4, 5, 6, 7, 8]
+    True
+    """
+```
+
+22. Range (third argument)
+    > range can have a third argument, which determines the interval of the sequence produced, also called the step.
+
+```py
+numbers = list(range(5, 20, 2))
+print(numbers)
+    """
+    [5, 7, 9, 11, 13, 15, 17, 19]
+    """
+```
+
+22. for Loops
+    > The for loop is commonly used to repeat some code a certain number of times. This is done by combining for loops with range objects.
+
+```py
+for i in range(5):
+print("hello!")
+
+    """
+    hellow!
+    hellow!
+    hellow!
+    hellow!
+    hellow!
+    """
+```
+
+23. Resuing Code
+
+    > Code reuse is a very inportant part of programming in any language. Incresing code size makes it harder to maintain. For a large programming project to be successful, it is essential to abide by the Don't Repeat Yourself, or Dry, principle. We've already looked at one way of doing this: by using loops. In this module, we will explore two ,ore: functions and modules.
+    >
+    > > Bad, repetitive code is said to abide by the WET principle, which stands for Write Everything Twice, or We Enjoy Typing.
+
+24. Functions
+    > in addition to using pre-defined functions, you can create your own functions by using the 'def' statement. Here is an example of a function named my_func. it takes no arguments, and prints "spam" three times. it is defined, and then called. The statements in the function are executed only when the function is called.
+
+```py
+def my_func():
+    print("spam")
+    print("spam")
+    print("spam")
+my_func()
+# spam
+# spam
+# spam
+```
+
+25. Arguments
+    > All the function definitions we've looked at so far have been functions of zero arguments, which are called with empty parentheses. However, most functions take arguemnts. The example velow defineds a function that takes one argument:
+
+```py
+def print_with_exclamation(word):
+    print(word + '!')
+
+print_with_exclamation('spam')
+print_with_exclamation('eggs')
+print_with_exclamation('python')
+
+# spam!
+# eggs!
+# python!
+```
+
+26. Returning from functions
+    > Certain functions, such as int or str, return a value that can be used later. To do this for your defined functions, you can use the return statement.
+
+```py
+def max(x, y):
+    if x >= y:
+        return x
+    else:
+        return y
+print(max(4, 7))
+z = max(8, 5)
+print(z)
+
+# 7
+# 8
+```
+
+> The return statement cannot be used outside of a function definition.
+
+26. Returning from functions
+
+> Once you return a value from a function, it immediately stops being executed. Any code after the return statement will never happen.
+
+```py
+def add_numbers(x, y):
+    total = x + y
+    return total
+    print("This won't be printed")
+print(add_numbers(4, 5))
+# 9
+```
+
+27. Comments
+    > Comments are annotations to code used to make it easier to understand. They don't affect how code is run. In Python, a comment is create by inserting an 'octothorpe'(otherwise known as a number sign or hash symbol: #). All text after it on that line is ignored.
+
+```py
+x = 365
+y = 7
+# this is a comment
+
+print(x % y) #find the remainder
+#print(x // y)
+# another comment
+```
+
+28. Docstrings
+    > Docstrings(documentation strings) serve a similar purpose to comments, as they are designed to explain code. However, they are more specific and have a different syntax. They are created by putting a multiline string containing an explanation of the function below the function's first line
+
+```py
+    """
+    Print a word with an
+    exclamation mark following it.
+    """
+    print(word + "!")
+shout("spam")
+```
+
+29. Functions
+    > Functions can also be used as arguemnts of other functions.
+
+```py
+def add(x, y):
+    return x + y
+def do_twice(func, x, y)"
+return func(func(x, y), func(x, y))
+
+a = 5
+b = 10
+
+print(do_twice(add, a, b))
+
+    """
+    30
+    """
+```
+
+29. Modules
+    > Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathmatical operations, etc. The basic way to use a module is to add import moule_name at the top of your code, and then using module_name.var to access functions and values with the name var in the modules. For example, the following example uses the random module to generate random numbers
+
+```py
+import random
+
+for i in range(5):
+    value = random.randint(1, 6)
+    print(value)
+
+# 1
+# 2
+# 5
+# 2
+# 3
+```
+
+29. Modules
+    > There is another kind of import that can be used if you only need certain functions from a module. These take the form from module_name import var, and then var can be used as if it were defined normally in your code. For example, to import only the pi constant from the math module:
+
+```py
+from math import pi
+print(pi)
+
+ # 3.14159265359
+```
+
+29. Modules
+    > You can import a module or object under a different name using the as keyword. This is mainly used when a module or object has a long or confusing name.
+
+```py
+from math import sqrt as square_root
+print(square_root(100))
+
+# 10.0
+```
+
+29. Modules
+    > There are three main types of modules in Python, those you write yourself, those you install from external sources,and those that are preinstalled with Python.
+    > the last type is called the standard library, and contains many useful modules. Some of the standard library's useful modules include string, re, datetime, math, random, os, multiprocessing, subprocess, socket, email, json, doctest, unittest, pdb, argparse and sys.
+    > Tasks that can be done by the standard library include string parsing, data serialization, testing, debugging and manipulating dates, emails, command line arguments, and much more
+
+> > many third-party Python modules are stored on the Python Package Index(PyPI).
