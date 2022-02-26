@@ -1,6 +1,6 @@
-#python
+# python
 
-##basic
+## basic
 
 1. print() 출력
 2.
@@ -31,7 +31,7 @@ print(1.25 % 0.5)
 
 ---
 
-##string
+## string
 
 1. print('')내부에서 어퍼스트로피를 쓰고싶은 경우 \'를 입력해주면 된다.
 
