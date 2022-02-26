@@ -684,7 +684,7 @@ except:
 #ZeroDivisionError: integer division or modulo by zero
 ```
 
-33. Assertion
+33. Assertions
     > An assertion is a sanity-check that you can turn on or trun off when you have finished testing the program. An expression is tested, and if the result comes up false, an exception is raise. Assertions are carried out through use of the assert statement.
 
 ```py
@@ -700,3 +700,145 @@ print(3)
 #    assert 1 + 1 == 3
 # AssertionError
 ```
+
+33. Assertions
+    > The assert can take a second argument that is passed to the AssertionError raised if the assertion fails.
+
+```py
+temp = -10
+assert (temp >= 0), "Colder than absolute zero!"
+#Traceback (most recent call last):
+#  File "hellow.py", line 2, in <module>
+#    assert (temp >= 0), "Colder than absolute zero!"
+#AssertionError: Colder than absolute zero!
+```
+
+- plus) AssertionError exceptions can be caught and handled like any other exception using the try-except statement, but if not handled, this type of exception will terminate the program.
+
+34. Opening files
+    > You can use Python to read and write the contents of files. Text files are the easiest to manipulate. Before a file can be edited, it must be opened, using the open function.
+
+```py
+myfile = open("filename.txt")
+```
+
+- plus) The argument of the open function is the path to the file. if the file is in the current working directory of the program, you can specify only its name.
+
+34. Opening Files
+    > You can specify the mode used to open a file by applying a second argument to the open function.
+
+- Sending "r" means open in read mode, which is the default.
+- Sending "w" means write mode, for rewriting the contents of a file
+- Sending "a" means append mode, for adding new content to the end of the file.
+- Adding "b" to a mode opens it in binary mode, which is used for non-text files (such as image and sound files).
+
+```py
+# write mode
+open("filename.txt", "w")
+# read mode
+open("filename.txt", "r")
+open("filename.txt")
+# binary write mode
+open("filename.txt", "wb")
+```
+
+- plus) You can use the + sign with each of the modes above to give them extra access to files, For example, r+ opens the file for both reading and writing.
+
+34. Opening Files
+    > Once a file has been opened and used, you should close it. This is done with the close method of the file object.
+
+```py
+file = open("filename.txt", "w")
+# do stuff to the file
+
+file.close()
+```
+
+- plus) We will read/write content to files in the upcoming lesson.
+
+35. Reading Files
+    > The contents of a file that has been opend in text mode can be read using the read method.
+
+```py
+file = open("filename.txt", "r")
+cont = file.read()
+print(cont)
+file.close()
+```
+
+- This will print all of the contents of the file "filename.txt"
+
+35. Reading Files
+    > To read only a certain abount of a file, you can provide a number as an argument to the read function. This determines the number of bytes that should be read. You can make more calls to read on the same file object to read more of the file byte by byre. With no argument, read returns the rest of the file.
+
+```py
+file = open("filename.txt", "r")
+print(file.read(16))
+print(file.read(4))
+print(file.read(4))
+print(file.read())
+file.close()
+```
+
+- Just like passing no arguments, negative values will return the entrie contents.
+
+35. Reading Files
+    > After all contents in a file have been read, any attempts to read furthre from that file will return an empty string, because you are trying to read from the end of the file.
+
+```py
+file = open("filename.txt", "r")
+file.read()
+print("Re-reading")
+print(file.read())
+print("Finished")
+file.close()
+```
+
+```py
+>>>
+Re-reading
+
+Finished
+>>>
+```
+
+- Just like passing no arguments, negative values will return the entire contents.
+
+35. Reading Files
+
+> To retrieve each line in a file, you can use the readlines method to return a list in which each element is a line in the file.
+
+```py
+file = open("filename.txt", "r")
+print(file.readlines())
+file.close()
+```
+
+```py
+>>>
+['Line 1 text \n', 'Line 2 text \n', 'Line 3 text']
+>>>
+```
+
+- You can calso use a for loop to iterate through the lines in the file:
+
+```py
+file = open("filename.txt", "r")
+
+for line in file:
+    print(line)
+
+file.close()
+```
+
+```py
+>>>
+Line 1 text
+
+Line 2 text
+
+Line 3 text
+>>>
+```
+
+- plus) In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.
