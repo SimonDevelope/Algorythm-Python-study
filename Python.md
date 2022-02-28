@@ -842,3 +842,83 @@ Line 3 text
 ```
 
 - plus) In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.
+
+36. Writing Files
+    > To write to files you use the write method, which writes a string to the file.
+
+```py
+file = open("newFile.txt", "w")
+file.write("This has been written to a file")
+file.close()
+
+file = open("newfile.txt", "r")
+print(file.read())
+file.close()
+```
+
+- plus) The "W" mode will create a file, if it does not already exist.
+
+36. Writing Files
+
+```py
+file = open("newfile.txt", "r")
+print("Reading initial contents")
+print(file.read())
+print("Finished")
+file.close()
+
+file = open("newfile.txt", "w")
+file.wrie("Some new text")
+file.close()
+
+file = open("newfile.txt", "r")
+print("REading new contents")
+print(file.read())
+print("Finished")
+file.close()
+
+# As you can see, the content of the file has been overwritten
+```
+
+- plus) What happens if you open a file in write mode and then immediately close it? : The file contents are deleted
+
+36. Writing Files
+    > The write method returns the number of bytes written to a file, if successful
+
+```py
+msg = "Hello world!"
+file = open("newfile.txt", "w")
+print(amount_written)
+file.close()
+
+# None
+```
+
+- plus) To write something other than a string, it needs to be converted to a string first.
+- plus) If a file write operation is successful, which one of these statements will be true? : file.write(msg) == len(msg)
+
+37. Working with Files
+    > It is good practice to aboid wasting resource by making sure that files are always closed after they have been used. One way of doing this is to use try and finally.
+
+```py
+try:
+    f = open("newfile.txt")
+    print(f.read())
+finally:
+    f.close()
+
+```
+
+37. Working with Files
+    > An alterantive way of doing this is using with statements. This creates a temporary variable(often called f), which is only accessible in the indented block of the with statement.
+
+```py
+with open('newfile.txt') as f:
+    print(f.read())
+
+# Hello world!
+```
+
+- plus) The file is automatically closed at the end of the with statement, even if exceptions occur within it.
+
+38.
