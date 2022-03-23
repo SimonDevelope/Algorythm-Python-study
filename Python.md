@@ -989,4 +989,188 @@ squares = {1: 1, 2: 4, 3: "error", 4: 16,}
 squares[8] = 64
 squares[3] = 9
 print(squares)
+
+# {8: 64, 1: 1, 2: 4, 3: 9, 4: 16}
 ```
+
+7. Dictionaries
+   > To determine whether a key is in a dictionary, you can use in and not in, just as you can for a list.
+
+```py
+nums = {
+    1: "one",
+    2: "two",
+    3: "three",
+}
+
+print(1 in nums)
+print("three" in nums)
+print(4 not in nums)
+
+# True
+# False
+# True
+```
+
+8. Dictionaries
+   > A useful dictionary method is get. it does the same thing as indexing, but if the key is not found in the dictionary it return another specified value instead('None', by default)
+
+```py
+pairs = {
+    1: "apple",
+    "orange": [2, 3, 4],
+    True: False,
+    None: "True",
+}
+
+print(pairs.get("orange"))
+print(pairs.get(7))
+print(pairs.get(12345, "not in dictionary"))
+
+# [2, 3, 4]
+# None
+# not in dictionary
+```
+
+9. Dictionaries
+   > A useful dictionary method is get. it does the same thing as indexing, but if the key is not found in the dictionary it returns another specified value instead('None', by default)
+
+```py
+pairs = {
+ 1: "apple",
+ "orange": [2, 3, 4],
+ True: False,
+ None: "True",
+}
+
+print(pairs.get("orange"))
+print(pairs.get(7))
+print(pairs.get(12345, "not in dictionary"))
+# [2, 3, 4]
+# None
+# not in dictionary
+```
+
+> > Dictionary 객체의 get()메소드 => dic.get(key, default=None), get메소드의 두번째 인자는 만약 해당 key가 없을 때 반환하는 None을 바꾸고 싶을 때 지정한다.
+
+10. Tuple
+    > Tuples are very similar to lists, except that they are immutable(they cannot be changed). Also, they are created using parentheses, rather than square brackets.
+
+```py
+words = ("spam", "eggs", "sausages")
+print(words[0])
+words[1] = 'cheese'
+
+# spam
+# TypeError: 'tuple' object does not support item assignment
+```
+
+11. Tuple
+    > Tuples can be created without the parentheses, by just separating the values with commas.
+
+```py
+my_tuple = "one", "two", "three"
+print(my_tuple[0])
+
+# one
+```
+
+> > An empty tuple is created using an empty parenthesis pair.
+
+```py
+tpl = ()
+```
+
+> > > Tuples are faster than lists, but they cannot be changed.
+
+12. List Slices
+
+    > List slices provide a more advanced way of retrieving values from a list. Basic list slicing involves indexing a list with two colon-separated integers. This returns a new list containing all the values in the old list between the indices.
+
+    > > Slicing can also be done on tuples.
+
+```py
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[2: 6])
+print(squares[3: 8])
+print(squares[0: 1])
+
+# [4, 9, 16, 25]
+# [9, 16, 25, 36, 49]
+# [0]
+```
+
+13. List Slices
+    > If the first number in a slice is omitted, it is taken to be the start of the list. If the second number is omitted, it is taken to be the end
+
+```py
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[:7])
+print(squares[7:])
+
+# [0, 1, 4, 9, 16, 25, 36]
+# [49, 64, 81]
+```
+
+14. List Slices
+    > List slices can aslso have a third number, representing the step, to include only alternate values in the slice.
+
+```py
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[::2])
+print(squares[2:8:3])
+
+# [0, 4, 16, 36, 64]
+# [4, 25]
+```
+
+> > [2:8:3]will include elements starting from the 2nd index up to the 8th with a step of 3.
+
+15. List Slices
+    > Negative values can be used in list slicing(and normal list indexing). When negative values are used for the first and second value in a slice (or a normal index), they count from the end of the list.
+
+```py
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[1:-1])
+
+
+#[1, 4, 9, 16, 25, 36, 49, 64]
+```
+
+> > If a negative value is used for the step, the slice is done backwards. Using [::-1] as a slice is a common and idiomatic way to reverse a list.
+
+16. List Comprehensions
+    > List comprehensions are a useful way of quickly creating lists whose contents obey a simple rule. For example, we can do the following:
+
+```py
+# a list comprehension
+nums = [i*2 for i in range(10)]
+
+print(nums)
+
+# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
+
+17. List Comprehensions
+    > A list comprehension can also contain an if statement to enforce a condition on values in the list
+
+```py
+evens=[i**2 for i in range(10) if i**2 % 2 == 0]
+
+print(evens)
+
+# [0, 4, 16, 36, 64]
+```
+
+18. List Comprehensions
+    > Trying to create a list in a very extensive range will result in a MemoryError. This code shows an example where the list comprehension runs out of memory.
+
+```py
+even = [2*i for i in range(10**100)]
+
+print(even)
+
+# OverflowError: range() result has too many items
+```
+
+> > This issue is solved by generators, which are covered in the next module.
