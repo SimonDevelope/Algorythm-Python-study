@@ -1174,3 +1174,146 @@ print(even)
 ```
 
 > > This issue is solved by generators, which are covered in the next module.
+
+19. String Formatting
+    > So far, to combine strngs and non-strings, you've converted the non-strings to strings and added them. String formatting provides a more powerful way to embed non-strings within strings. String formatting uses a string's format method to substitute a number of arguments in the string.
+
+```py
+# string formatting
+
+nums = [4, 5, 6]
+msg = "Number: {0} {1} {2}". format(nums[0], nums[1],nums[2])
+
+print(msg)
+
+# Number: 4 5 6
+```
+
+> > Each argument of the format function is placed in the string at the corresponding position, which is determinded using the curly braces{}.
+
+20. String Formatting
+    > String formatting can also be done with named arguments.
+
+```py
+a = "{x}, {y}".format(x = 5, y = 12)
+
+print(a)
+
+# 5, 12
+```
+
+21. String Functions
+    > Python contains many useful built-in functions and methods to accomplish common tasks. join - joins a list of strings with another string as a separator. replace - replaces one substring in a string with another. startswitch and endswitch - determine if there is a substring at the start and end of a string, repectively. To change the case of a string, you can use lower and upper. The method split is the opposite of join turning a string with a certain separator into a list.
+
+```py
+print(",".join(["spam", "eggs", "ham"]))
+# prints "spam, eggs, ham"
+
+print("Hello ME".replace("ME", "world"))
+# prints "Hello world"
+
+print("This is a sentence.".startswith("This"))
+# prints "True"
+
+print("This is a sentence.".endswith("sentence."))
+#prints "True"
+
+print("This is a sentence.".upper())
+# prints "THIS IS A SENTENCE."
+
+print("AN ALL CAPS SENTENCE".lower())
+#prints "an all caps sentence"
+
+print("spam, eggs, ham".split(","))
+#prints "['spam', 'eggs', 'ham']"
+```
+
+22. Numeric Functions
+    > To find the maximum or minimum of some numbers or a list, you can use max or min. To find the distance of a number from zero (its absolute value), use abs. To round a number to a certain number of decimal places, use round. To find the total of a list, use sum.
+
+```py
+print(min(1, 2, 3, 4, 0, 2, 1))
+print(max([1, 4, 9, 2, 5, 6, 8]))
+print(abs(-99))
+print(abs(42))
+print(sum([1, 2, 3, 4, 5]))
+
+# 0
+# 9
+# 99
+# 42
+# 15
+```
+
+23. List Functions
+    > Often used in conditional statements statements, all and any take a list as an argument, and return True if all or any(respectively) of their arguments evaluate to True(and False otherwise). The function enumerate can be used to iterate through the values and indices of a list simultaneously.
+
+```py
+nums = [55, 44, 33, 22, 11]
+
+if all([i > 5 for i in nums]):
+    print("All larger than 5")
+
+if any([i % 2 == 0 for i in nums]):
+    print("At least one is even")
+
+for v in enumerate(nums):
+    print(v)
+
+
+# All larger than 5
+# At least one is even
+# (0, 55)
+# (1, 44)
+# (2, 33)
+# (3, 22)
+# (4, 11)
+```
+
+24. Text Analyzer
+    > This is an example project, showing a program that analyzes a sample file to find what percentage of the text each character occupies. This section shows how a file could be open and read.
+
+```py
+filename = input("Enter a filename:")
+
+with open(filename) as f:
+    text = f.read()
+
+print(text)
+
+# Enter a filename: test.txt
+# Traceback (most recent call last):
+#  File "hellow.py", line 1, in <module>
+#    filename = input("Enter a filename:")
+#  File "<string>", line 1, in <module>
+# NameError: name 'test' is not defined
+```
+
+25. Text Analyzer
+    > This part of the program shows a function that counts how many times a character occurs in a string.
+
+```py
+def count_chr(text, char):
+    count = 0
+    for c in text:
+        if c == char:
+            count += 1
+    return count
+```
+
+> This function takes as its arguments the text of the file and one character, returning the number of times that character appears in the text. Now we can call it for our file.
+
+```py
+filename = input("Enter a filename:")
+with open(filename) as f:
+    text = f.read()
+
+print(count_char(text, "r"))
+
+# Enter a filename: test.txt
+# 83
+```
+
+> > The character "r" appears 83 times in the file.
+
+26. Text Analyzer
