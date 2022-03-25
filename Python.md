@@ -1245,6 +1245,8 @@ print(sum([1, 2, 3, 4, 5]))
 # 15
 ```
 
+> > abs는 절대값으로 반환하는 함수이다.
+
 23. List Functions
     > Often used in conditional statements statements, all and any take a list as an argument, and return True if all or any(respectively) of their arguments evaluate to True(and False otherwise). The function enumerate can be used to iterate through the values and indices of a list simultaneously.
 
@@ -1317,3 +1319,77 @@ print(count_char(text, "r"))
 > > The character "r" appears 83 times in the file.
 
 26. Text Analyzer
+    > The next part of the program finds what percentage of the text each character of the alphabet occupies.
+
+```py
+def count_char(text, char):
+    count = 0
+    for c in text:
+        if c == char:
+            count += 1
+    return count
+
+filename = input("Enter a filename: ")
+with open(filename) as f:
+    text = f.read()
+
+for char in "abcdefghijklmnopqrstuvwxyz":
+    perc = 100 * count_char(text, char) / len(text)
+    print("{0} - {1} %".format(char, round(perc, 2)))
+
+
+
+
+# Enter a filename: test.txt
+# a - 4.68%
+# b - 4.94%
+# c - 2.28%
+```
+
+> > what is the purpose of the round function in the code? = To reduce the number of digits printed.
+
+### Functional Programming
+
+1. Functional programming
+   > Functional programming is a style of programming that (as the name suggests) is basesd around functions. A key part of functional programming is higher-order functions. we have seen this idea briefly in the previous lesson on functions as objects. Higher-order functions take other functions as arguments, or return them as results.
+
+```py
+def apply_twice(func, arg):
+    return func(func(arg))
+
+def add_five(x):
+    return x + 5
+
+print(apply_twice(add_five, 10))
+
+# 20
+```
+
+> > The function apply_twice takes another functions as its argument, and calls it twice inside its body.
+
+2. Pure Functions
+   > Functional programming seeks to use pure functions. Pure functions have no side effects, and return a value that depends only on their arguments. This is how functions in math work: for example, The cos(x) will, for the same value of x, always return the same result. Below are examples of pure and impure functions.
+
+> > Pure Function:
+
+```py
+def pure_functions(x, y):
+    temp = x + 2 * y
+    return temp / (2 * x + y)
+```
+
+> > Impure Function:
+
+```py
+some_list = []
+
+def impure(arg):
+    some_list.append(arg)
+```
+
+> > > The function above is not pure, becuase it changed the state of some_list.
+
+3. Pure Functions
+   > Using pure functions has both advantages and disadvantages. Pure functions are: - easier to resaon about and test. - more efficient. Once the function has been evaluated for an input, the result can be stored and referred to the next time the functions of that input is needed, reducing the number of times the functions is called, This is called Memoization. - easier to run in parallel.
+
+> > The main disadvantage of using only pure functions is that they majorly complicate the otherwise simple task of I/O, since this appears to inherently require side effects. They can also be more difficult to write in some situations.
